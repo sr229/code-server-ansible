@@ -22,13 +22,13 @@
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
     become: yes
 
-  - name: Install C++
-    package: name="gcc-c++" state=installed
-    when: ansible_distribution == 'Fedora'
-    become: yes
- 
   - name: Install net-tools
     package: name=net-tools state=installed
+    become: yes
+    become_method: sudo
+
+  - name: Install OpenSSL
+    package: name=openssl state=installed
     become: yes
     become_method: sudo
 
