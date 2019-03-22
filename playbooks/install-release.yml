@@ -5,7 +5,7 @@
   become_method: sudo
   vars:
     # Maintainers: change this to a new release when there's a new tag in upstream
-    coder_version: "1.32.0-245" 
+    coder_version: "1.32.0-310" 
 
   tasks:
   - name: Install Git
