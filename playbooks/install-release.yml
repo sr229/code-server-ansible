@@ -38,6 +38,6 @@
     become_method: sudo
 
   - name: Install code-server
-    command: chdir=/tmp/code-server-{{ coder_version }}-linux-x64 chmod a+x ./code-server && mv ./code-server /usr/bin
+    command: chdir=/tmp/code-server{{ coder_version }}-linux-x64 chmod a+x ./code-server && mv ./code-server /usr/bin
     become: yes
     become_method: sudo
