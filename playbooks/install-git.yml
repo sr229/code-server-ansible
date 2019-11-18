@@ -58,6 +58,6 @@
     become: yes
 
   - name: Build and Install code-server
-    command: chdir=/tmp/code-server yarn && yarn task build:server:binary && chmod -R 755 src/packages/server/cli-linux-x64 && cp -Rf src/packages/server/cli-linux-x64 /usr/bin/code-server
+    command: chdir=/tmp/code-server yarn && yarn build 1.39.2 ansible && yarn binary 1.39.2 ansible && chmod -R 755 release/*-x86_64 && cp -Rf release/*-x86_64 /usr/bin/code-server
     become: yes
   
