@@ -5,7 +5,7 @@
   become_method: sudo
   vars:
     # Maintainers: change this to a new release when there's a new tag in upstream
-    coder_version: "1.1156-vsc1.33.1" 
+    coder_version: "2.1692-vsc1.39.2" 
 
   tasks:
   - name: Install Git
@@ -33,7 +33,7 @@
     become_method: sudo
 
   - name: Acquire code-server
-    command: chdir=/tmp wget -O - https://github.com/codercom/code-server/releases/download/{{ coder_version }}/code-server{{ coder_version }}-linux-x64.tar.gz | tar -xvz
+    command: chdir=/tmp wget -O - https://github.com/codercom/code-server/releases/download/{{ coder_version }}/code-server{{ coder_version }}-linux-x86_64.tar.gz | tar -xvz
     become: yes
     become_method: sudo
 
